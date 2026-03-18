@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding-top: 0;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+  grid-template-columns: 3fr 4fr 3fr;
+  font-size: 0.875em;
+  grid-template-areas:
+    "header header header"
+    "article article aside"
+    "main main main"
+    "footer footer footer";
+  font-family:Inter,Nunito, sans-serif;
+  background-color:#9A8C98;
+  color:#F2E9E4;
+
+}
+#container{
+  grid-area:header;
+  position:sticky;
+  display: flex;
+  top:0;
+  min-height:80px;
+  background-color:#22223B;
+}
+header a{
+  text-decoration: none;
+  color: white;
+
+
+}
+header a:visited {
+  text-decoration: none;
+  color: white;
+}
+#logo img
+{
+  min-width: 50px;
+  max-width: 100px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+header{
+  flex: 3;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#logo{
+  flex: 3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+nav{
+  flex: 4;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 15px;
+}
+#box4{
+  background-image: url("bg2.jpg");
+  background-size: cover;
+  width: 100%;
+  height:900px;
+}
+nav a{
+  color: #F7F7FF;
+  text-decoration: none;
+  background-color: #7E7F9A;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+nav a:hover{
+  cursor:crosshair;
+  transform: translateY(-4px) scale(1.03); /* AI */
+  box-shadow: 0 14px 30px rgba(106, 92, 255, 0.4);/* AI */
+  background: linear-gradient(135deg, #7b6cff, #a18fff);/* AI */
+
+}
+main{
+  text-indent: 50px;
+  grid-area: main;
+  background-color:#4A4E69;
+  padding: 20px;
+  display: grid;
+
+}
+main div{
+  padding: 30px;
+  border:1px solid white;
+  background-color: #63647E;
+  text-align: center;
+
+}
+main div p{
+
+}
+main h3{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: xx-large;
+
+}
+aside{
+  grid-area: aside;
+  background-color: #4A4E69;
+  padding: 20px;
+
+}
+aside ul{
+  list-style: square;
+  padding: 50px;
+}
+
+
+article{
+
+  grid-area: article;
+   background-color:#4A4E69;
+   padding: 50px;
+ }
+
+ footer{
+   grid-area: footer;
+  padding: 20px;
+  text-align: center;
+   background-color:#22223B;
+}
+
+[id] { /* to mi dał chat bo irytowało mnie ucinanie tekstu przy uzyciu odnosnika*/
+  scroll-margin-top: 90px;
+}
+
+@media screen and (max-width: 800px) {
+
+  body{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-areas:
+      "header"
+      "article"
+      "aside"
+      "main"
+      "footer";
+  }
+  #container{
+    flex-direction: column;
+    min-height: auto;
+  }
+  #logo,
+  header,
+  nav{
+    width: 100%;
+  }
+  nav{
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+  nav a{
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  article,aside,main,footer{
+    padding: 12px;
+  }
+  main{
+    text-indent: 0;
+  }
+  main div{
+    padding: 16px;
+  }
+  main h3{
+    font-size: 1.4rem;
+  }
+  #logo img{
+    max-width: 80px;
+  }
+  [id] { /* to mi dał chat bo irytowało mnie ucinanie tekstu przy uzyciu odnosnika*/
+    scroll-margin-top: 200px;
+  }
+}
+
+

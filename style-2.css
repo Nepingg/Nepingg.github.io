@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+
+}
+html{
+
+height: 100%;
+}
+body {
+  margin: 0;
+  padding-top: 0;
+  display: grid;
+  grid-template-rows: auto 1fr 1fr auto;
+  height: 100%;
+  overflow: hidden;
+  grid-template-columns: 3fr 4fr 3fr;
+  color: #0D0A0B;
+  font-size: 0.875em; /* zchatowane*/
+  grid-template-areas:
+    "header header header"
+    "article main main"
+    "aside main main"
+    "footer footer footer";
+  font-family:Inter,Nunito, sans-serif;
+  background-color: #F7F7FF;
+
+
+}
+#container{
+  grid-area:header;
+  position:sticky;
+  display: flex;
+  top:0;
+  min-height:80px;
+  display: flex;
+}
+header a{
+  text-decoration: none;
+  color: white;
+
+}
+header a:visited {
+  text-decoration: none;
+  color: white;
+}
+#logo img
+{
+  min-width: 50px;
+  max-width: 100px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+header{
+  order:2;
+  flex: 3;
+  background-color:#BDD5EA;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#logo{
+  order:1;
+  flex: 3;
+  background-color:#BDD5EA;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+nav{
+  order:3 ;
+  flex: 4;
+  background-color:#BDD5EA;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 15px;
+}
+nav a{
+  color: #F7F7FF;
+  text-decoration: none;
+  background-color:#577399;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+nav a:hover{
+  cursor:crosshair;
+  box-shadow: /* AI */
+    0 0 5px   #ffffff, /* AI */
+    0 0 10px  #ffffff, /* AI */
+    0 0 20px  #ffffff, /* AI */
+    0 0 40px  #ffffff, /* AI */
+    0 0 60px  rgba(255, 255, 255, 0.6), /* AI */
+    0 0 80px  rgba(255, 255, 255, 0.4); /* AI */
+}
+main{
+
+  text-indent: 50px;
+  grid-area: main;
+  background-color: #BDD5EA;
+  padding: 20px;
+  color:#191A24;
+  overflow-y: auto;
+  min-height: 0;
+
+
+}
+main h3{
+  font-family:  Playfair Display, serif;
+}
+main p{
+  font-family: Inter , serif;
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+.box1{
+  border: 1px solid white;
+}.box2{
+  border: 1px solid white;
+}.box3{
+  border: 1px solid white;
+}
+main div{
+  padding: 30px;
+  border-top:1px solid white;
+  background-color: #E0EBF5;
+}
+main h3{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: xx-large;
+
+}
+aside{
+  grid-area: aside;
+  background-color: #E0EBF5;
+  padding: 20px;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  color:#191A24;
+  list-style: square;
+}
+
+
+article{
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+  grid-area: article;
+  color:#191A24;
+  background-color:#E0EBF5;
+  padding: 20px;
+}
+#box4{
+  background-image: url("bg1.jpg");
+  scroll-behavior: smooth;
+  height: 200px;
+  background-color: #0D0A0B;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 70%;
+
+
+}
+
+footer{
+  grid-area: footer;
+  background-color: #BDD5EA;
+  padding: 20px;
+  text-align: center;
+}
+
+
+[id] { /* to mi dał chat bo irytowało mnie ucinanie tekstu przy uzyciu odnosnika*/
+  scroll-margin-top: 90px;
+}
+
+@media screen and (max-width: 800px) {
+
+  body{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-areas:
+      "header"
+      "article"
+      "aside"
+      "main"
+      "footer";
+  }
+  #container{
+    flex-direction: column;
+    min-height: auto;
+  }
+  #logo,
+  header,
+  nav{
+    width: 100%;
+  }
+  nav{
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+  nav a{
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  article,aside,main,footer{
+    padding: 12px;
+  }
+  main{
+    text-indent: 0;
+  }
+  main div{
+    padding: 16px;
+  }
+  main h3{
+    font-size: 1.4rem;
+  }
+  #logo img{
+    max-width: 80px;
+  }
+  [id] { /* to mi dał chat bo irytowało mnie ucinanie tekstu przy uzyciu odnosnika*/
+    scroll-margin-top: 200px;
+  }
+}
+
+
+
