@@ -156,7 +156,7 @@ article{
   padding: 20px;
 }
 #box4{
-  background-image: url("bg1.jpg");
+  background-image: url("assets/bg1.jpg");
   scroll-behavior: smooth;
   background-color: #0D0A0B;
   background-size: cover;
