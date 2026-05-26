@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'autoload.php';
 
 $config = new \App\Service\Config();
@@ -36,6 +40,35 @@ switch ($action) {
             break;
         }
         $controller = new \App\Controller\PostController();
+        $view = $controller->deleteAction($_REQUEST['id'], $router);
+        break;
+    case 'game-index':
+        $controller = new \App\Controller\GameController();
+        $view = $controller->indexAction($templating, $router);
+        break;
+    case 'game-create':
+        $controller = new \App\Controller\GameController();
+        $view = $controller->createAction($_REQUEST['game'] ?? null, $templating, $router);
+        break;
+    case 'game-edit':
+        if (! $_REQUEST['id']) {
+            break;
+        }
+        $controller = new \App\Controller\GameController();
+        $view = $controller->editAction($_REQUEST['id'], $_REQUEST['game'] ?? null, $templating, $router);
+        break;
+    case 'game-show':
+        if (! $_REQUEST['id']) {
+            break;
+        }
+        $controller = new \App\Controller\GameController();
+        $view = $controller->showAction($_REQUEST['id'], $templating, $router);
+        break;
+    case 'game-delete':
+        if (! $_REQUEST['id']) {
+            break;
+        }
+        $controller = new \App\Controller\GameController();
         $view = $controller->deleteAction($_REQUEST['id'], $router);
         break;
     case 'info':
