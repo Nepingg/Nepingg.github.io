@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Games index{% endblock %}
+
+{% block body %}
+    <h1>Games index</h1>
+
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for game in games %}
+            <tr class="watermelon-row-green">
+                <td>{{ game.id }}</td>
+                <td>{{ game.title }}</td>
+                <td>{{ game.description }}</td>
+                <td>
+                    <a class="btn btn-sm btn-info" href="{{ path('app_games_show', {'id': game.id}) }}">show</a>
+                    <a class="btn btn-sm btn-warning" href="{{ path('app_games_edit', {'id': game.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary mt-3" href="{{ path('app_games_new') }}">Create new</a>
+{% endblock %}
