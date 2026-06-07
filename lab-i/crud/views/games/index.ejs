@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="index">
+
+  <nav>
+    <ul>
+      <li><a href="/games">Lista gier</a></li>
+      <li><a href="/games/create">Dodaj grę</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1><%= title %></h1>
+    <a href="/games/create">Create new</a>
+
+    <ul class="index-list">
+      <% games.forEach(function(game) { %>
+        <li>
+          <h3><%= game.title %></h3>
+          <ul class="action-list">
+              <li><a href="/games/<%= game.id %>">Details</a></li>
+              <li><a href="/games/<%= game.id %>/edit">Edit</a></li>
+          </ul>
+        </li>
+      <% }); %>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Lab Express.js</p>
+  </footer>
+
+</body>
+</html>

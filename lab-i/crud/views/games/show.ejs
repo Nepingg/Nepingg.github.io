@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="show">
+
+  <nav>
+    <ul>
+      <li><a href="/games">Lista gier</a></li>
+      <li><a href="/games/create">Dodaj grę</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Game Details</h1>
+
+    <p><strong>ID:</strong> <%= game.id %></p>
+    <p><strong>Title:</strong> <%= game.title %></p>
+    <p><strong>Description:</strong></p>
+    <article><%= game.description %></article>
+
+    <ul class="action-list">
+        <li><a href="/games/<%= game.id %>/edit">Edit</a></li>
+        <li><a href="/games">Back to list</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Lab Express.js</p>
+  </footer>
+
+</body>
+</html>
