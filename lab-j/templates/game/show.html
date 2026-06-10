@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body_class %}show{% endblock %}
+
+{% block content %}
+  <h1>Game Details</h1>
+
+  <p><strong>ID:</strong> {{ game['id'] }}</p>
+  <p><strong>Title:</strong> {{ game['title'] }}</p>
+  <p><strong>Description:</strong></p>
+  <article>{{ game['description'] }}</article>
+
+  <ul class="action-list">
+      <li><a href="{{ url_for('edit', id=game['id']) }}">Edit</a></li>
+      <li><a href="{{ url_for('index') }}">Back to list</a></li>
+  </ul>
+{% endblock %}
