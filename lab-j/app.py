@@ -64,7 +64,7 @@ def create():
 
     return render_template('game/create.html', title='Create Game', game={})
 
-#a
+
 @app.route('/games/<int:id>')
 def show(id):
     game = get_db().execute('SELECT * FROM game WHERE id = ?', (id,)).fetchone()
